@@ -96,8 +96,6 @@ foreach($books as $book){
     if($book["year"]>2010){
         foreach($book as $b){
             echo $b.",";
-           
-
         } echo"<br>";
     }
 }
