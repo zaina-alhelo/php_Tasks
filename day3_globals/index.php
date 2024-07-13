@@ -6,16 +6,19 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- task 1 -->
     <!-- <form action="task1.php" method="GET" >
         <input type="email" name="email" placeholder="Email" require><br>
         <input type="password" name="password" placeholder="password" require><br>
         <input type="submit">
     </form>
-    <br><hr><br>
-    <form action="task2.php" method="POST" >
+    <br><hr><br>-->
+    <!-- task 2 -->
+    <!-- <form action="task2.php" method="POST" >
         <input type="url" name="url" placeholder="url" require><br>
         <input type="submit" value="GO">
-    </form> -->
+    </form>  -->
+    <!-- task 3 -->
     <!-- <form action="#" method="POST">
         <h2> Basic Calculator </h2>
         <label for="number1">Number1 : </label>
@@ -54,7 +57,55 @@
 // echo "<br>The result is : $result"; 
 
     ?> -->
+    <!-- task 4 -->
+     <?php
+// session_start();
 
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     if (isset($_POST['task']) && !empty($_POST['task'])) {
+//         $newTask = htmlspecialchars($_POST['task']);
+
+//         if (!isset($_SESSION['tasks'])) {
+//             $_SESSION['tasks'] = [];
+//         }
+
+//         array_push($_SESSION['tasks'], $newTask);
+//     }
+
+//     if (isset($_POST['delete'])) {
+//         $deleteIndex = $_POST['delete'];
+//         if (isset($_SESSION['tasks'][$deleteIndex])) {
+//             unset($_SESSION['tasks'][$deleteIndex]);
+//             $_SESSION['tasks'] = array_values($_SESSION['tasks']);
+//         }
+//     }
+// }
+
+// ?>
+
+
+//         <form action="" method="post">
+//             <input type="text" required name="task" placeholder="new task">
+//             <input type="submit" value="add task">
+//         </form>
+
+//         <?php
+//         if (isset($_SESSION['tasks']) && !empty($_SESSION['tasks'])) {
+//             echo "<ul>";
+//             foreach ($_SESSION['tasks'] as $index => $task) {
+//                 echo "<li>" . htmlspecialchars($task) . "
+//                         <form method='POST' action='' style='display:inline;'>
+//                             <input type='hidden' name='delete' value='$index'>
+//                             <input type='submit' value='Delete'>
+//                         </form>
+//                       </li>";
+//             }
+//             echo "</ul>";
+//         } else {
+//             echo "<p>No tasks </p>";
+//         }
+        ?>
+  
 
     <!-- </form> -->
      <!-- task 5  -->
@@ -81,27 +132,26 @@
 
     // echo $_SESSION['counter']
 ?> -->
- <!-- <?php
-//task 8
 
 
-// session_start();
-
-//         $_SESSION['counter'] = 0;
-
-// if (!isset($_COOKIE['unique_visitor'])) {
-//     setcookie('unique_visitor', '1', time() + (86400 * 30), '/');
-//     $_SESSION['counter']++;
-// }else{
-//        $_SESSION['counter']++;
+<!-- <?php
+ //task 8
+// $cookie_name = "visitor_id";
+// if (!isset($_COOKIE[$cookie_name])) {
+//     setcookie($cookie_name, uniqid(), time() + ( 60 * 60), "/");
+//     $file = 'visitor_count.txt';
+    
+//     if (!file_exists($file)) {
+//         file_put_contents($file, 0);
+//     }
+//     $count = (int)file_get_contents($file);
+//     $count++;
+    
+//     file_put_contents($file, $count);
 // }
-
-// $counter = $_SESSION['counter'];
-// echo "<h1>Visitor Counter</h1>";
-// echo "Number of unique visitors: $counter";
- ?> -->
-
-
+// $current_count = file_get_contents('visitor_count.txt');
+?> -->
+<!-- <h2>Number of Visitors :<?php echo $current_count ?></h2> -->
 
 <!-- <?php
 //Task 9
@@ -124,5 +174,7 @@
   <form method="get" action="">
         <button type="submit" name="delete_cookie" >Delete Cookie</button>
     </form> -->
+
+
 </body>
 </html>

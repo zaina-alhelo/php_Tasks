@@ -19,3 +19,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     echo "<br><br>";
 
 }
+ <!-- <?php
+// session_start();
+
+
+// if (!isset($_SESSION['tasks'])) {
+//     $_SESSION['tasks'] = [];
+// }
+// if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['task']) && !empty($_POST['task'])) {
+//     $newTask = htmlspecialchars($_POST['task']);
+//     $_SESSION['tasks'][] = $newTask;
+// }
+
+// if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
+//     $index = $_POST['delete'];
+//     if (isset($_SESSION['tasks'][$index])) {
+//         unset($_SESSION['tasks'][$index]);
+//         $_SESSION['tasks'] = array_values($_SESSION['tasks']); 
+//     }
+// }
+?> -->
