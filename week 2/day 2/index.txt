@@ -1,0 +1,91 @@
+
+Task 1
+  "sql => SELECT * FROM employees ;"
+Task 2
+  SELECT name, salary FROM  employees ;
+Task 3
+  SELECT * FROM  employees WHERE salary > 50.000 ;
+Task 4
+SELECT * FROM employees WHERE name LIKE "J%";
+Task 5
+SELECT * FROM employee WHERE department_id IN (1, 2, 3);
+Task 6
+ SELECT * FROM employees ORDER BY hire_date DESC
+Task 7
+SELECT COUNT(*) AS total FROM employees;
+Task 8
+SELECT SUM(salary)  FROM employees;
+ Task 9
+SELECT AVG(salary)  FROM employees;
+Task 10
+ SELECT MIN(salary)  FROM employee;
+ SELECT MAX(salary)  FROM employee;
+Task 11
+SELECT * FROM employee WHERE salary > 50000; 
+SELECT department_id, AVG(salary) AS avg_salary FROM employee GROUP BY department_id HAVING AVG(salary) > 50000;
+Task 12
+CREATE TABLE employees (
+     employee_id INT PRIMARY KEY,
+     name VARCHAR(50)
+ );
+ CREATE TABLE employee_details (
+     employee_id INT PRIMARY KEY,
+     birthdate DATE,
+     address VARCHAR(100),
+         FOREIGN KEY (employee_id) REFERENCES employees (employee_id)
+ );
+Task 13
+CREATE TABLE departments (
+     department_id INT PRIMARY KEY,
+     department_name VARCHAR(50)
+ );
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    department_id INT,
+        FOREIGN KEY (department_id)
+        REFERENCES departments (department_id)
+);
+
+Task 14
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(50)
+);
+CREATE TABLE courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(50)
+)
+CREATE TABLE student_courses (
+    student_id INT,
+    course_id INT,
+    PRIMARY KEY (student_id, course_id),
+    CONSTRAINT fk_student
+        FOREIGN KEY (student_id)
+        REFERENCES students (student_id),
+    CONSTRAINT fk_course
+        FOREIGN KEY (course_id)
+        REFERENCES courses (course_id)
+);
+Task 15
+CREATE TABLE employees (
+     employee_id INT PRIMARY KEY,
+     name VARCHAR(50),
+     department_id INT ,
+     FOREIGN KEY (department_id)
+REFERENCES departments(department_id);
+ );
+
+
+Task 16
+ALTER TABLE employees MODIFY name VARCHAR(50) NOT NULL;
+Task 17
+ALTER TABLE employees ADD CONSTRAINT unique_email UNIQUE (email);
+Task 18
+ALTER TABLE employees
+ADD CONSTRAINT check_salary CHECK (salary > 0);
+Task 19
+ALTER TABLE employees
+ALTER COLUMN status SET DEFAULT 'Active';
+
