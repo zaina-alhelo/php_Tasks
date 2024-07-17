@@ -1,0 +1,247 @@
+Task 1
+SELECT  employees.first_name , departments.department_name FROM departments INNER JOIN employees ON employees.department_id=departments.department_id;
+
+Task 2
+SELECT 
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    p.project_name,
+    p.start_date
+FROM 
+    employees e
+// INNER JOIN 
+    projects p 
+
+
+Task 3
+SELECT employees.first_name , departments.department_name FROM
+employees RIGHT JOIN departments ON employees.department_id = departments.department_id;
+
+Task 4
+
+
+
+Task 5
+SELECT 
+    e1.employee_id ,
+    e1.first_name ,
+    e1.last_name ,
+    e2.first_name AS manager_name
+    
+FROM 
+    employees e1
+INNER JOIN 
+    employees e2 ON e1.manager_id = e2.employee_id;
+
+
+Task 6
+SELECT * FROM employees CROSS JOIN departments ;
+
+Task 7
+SELECT 
+    e.employee_id AS employee_ID,
+    e.first_name AS employee_name ,
+    d.department_name AS department_name
+FROM 
+   employees e
+JOIN 
+    departments d ON e.department_id = d.department_id;
+
+Task 8
+SELECT 
+    d.department_name,
+    AVG(s.amount) AS average_salary
+FROM 
+    employees e
+INNER JOIN 
+    salaries s ON e.employee_id = s.employee_id
+INNER JOIN 
+    departments d ON e.department_id = d.department_id
+GROUP BY 
+    d.department_name;
+
+Task 9
+
+SELECT 
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    p.project_name,
+    p.start_date
+FROM 
+    employees e
+INNER JOIN 
+    projects p 
+WHERE 
+    p.start_date > '2023-01-15'  
+
+
+Task 10
+SELECT employees.first_name , departments.department_name FROM
+employees INNER JOIN departments WHERE departments.department_id=2 ;
+
+
+Task 11
+
+SELECT customers.customer_name ,orders.customer_id , orders.order_id,orders.order_date
+FROM customers INNER JOIN orders ON orders.customer_id=customers.customer_id ;
+
+Task 12
+SELECT * FROM employees INNER JOIN departments USING (department_id);
+
+
+Task 13
+SELECT 
+    c.customer_id,
+    c.customer_name,
+    COUNT(o.order_id) AS order_count
+FROM 
+    orders o
+JOIN 
+    customers c ON o.customer_id = c.customer_id
+GROUP BY 
+    c.customer_id,
+    c.customer_name
+HAVING 
+    COUNT(o.order_id) > 5;
+
+Task 14
+
+
+
+Task 15
+SELECT 
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    d.department_name
+FROM 
+    employees e
+JOIN 
+    departments d ON e.department_id = d.department_id
+ORDER BY 
+    d.department_name,
+    e.last_name
+
+
+Task 16
+SELECT 
+    d.department_name,
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    p.project_name
+FROM 
+    employees e
+JOIN 
+    departments d ON e.department_id = d.department_id
+ JOIN 
+    projects p 
+
+
+
+Task 17
+SELECT 
+    d.department_id,
+    d.department_name,
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    s.amount AS salary
+FROM 
+    departments d
+LEFT JOIN 
+    employees e ON d.department_id = e.department_id
+LEFT JOIN 
+    salaries s ON e.employee_id = s.employee_id
+ORDER BY 
+    d.department_id,
+    e.employee_id;
+
+
+Task 18
+
+SELECT 
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    p.project_name,
+    c.client_name
+FROM 
+    employees e
+INNER JOIN 
+    projects p 
+INNER JOIN 
+    clients c ON p.client_id = c.client_id
+
+
+
+    
+Task 19
+
+SELECT 
+    d.department_id,
+    d.department_name,
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    s.amount AS salary
+FROM 
+    departments d
+LEFT JOIN 
+    employees e ON d.department_id = e.department_id
+LEFT JOIN 
+    salaries s ON e.employee_id = s.employee_id
+ORDER BY 
+    d.department_id,
+    e.employee_id;
+
+Task 19
+
+
+
+Task 20
+SELECT 
+    e.employee_id ,
+    e.first_name,
+    e.department_id AS employee_department_id,
+    m.first_name AS manager_first_name,
+    d.department_name AS department_name
+FROM 
+    employees e
+INNER JOIN 
+    employees m ON e.manager_id = m.employee_id
+INNER JOIN 
+    departments d ON e.department_id = d.department_id
+
+Task 21
+
+SELECT 
+    e.employee_id,
+    e.first_name AS employee_first_name,
+    e.last_name AS employee_last_name,
+    d.department_id,
+    d.department_name,
+    p.project_id,
+    p.project_name
+FROM 
+    employees e
+CROSS JOIN 
+    departments d
+CROSS JOIN 
+    projects p
+
+Task 22
+SELECT 
+    emp.employee_id,
+    emp.first_name,
+    emp.last_name,
+    dep.department_name,
+    proj.project_name
+FROM 
+    employees emp
+INNER JOIN 
+    departments dep ON emp.department_id = dep.department_id
+INNER JOIN 
+    projects proj 
