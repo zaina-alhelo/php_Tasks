@@ -2,7 +2,7 @@
 
 
 class Car {
-    public $make;
+    public $make; 
     public $model;
     public $VIN;
     
@@ -33,7 +33,7 @@ class Inventory {
     }
 
     function removeCar($VIN) {
-      
+
     foreach ($this->cars as $index => $car) {
         if ($car->getVIN() === $VIN) {
             unset($this->cars[$index]);
